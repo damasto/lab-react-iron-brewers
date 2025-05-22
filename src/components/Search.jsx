@@ -1,13 +1,8 @@
 import { useEffect, useState } from "react";
 
-function Search({handleQuery}) {
+function Search({handleQuery, query}) {
   
-  const [query, setQuery] = useState("")
 
-  useEffect(() => {
-    handleQuery(query)
-  }, [query])
-  
 
   return (
     <div className="d-inline-flex justify-content-center align-items-center w-100 p-4">
@@ -21,7 +16,7 @@ function Search({handleQuery}) {
           type="text"
           className="form-control search-bar"
           value={query}
-          onChange={(e) => {setQuery(e.target.value)}}
+          onChange={(e) => {handleQuery(e.target.value)}}
         />
       </div>
     </div>
